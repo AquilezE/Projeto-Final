@@ -195,14 +195,14 @@ void AddCountry(Country arr[]){
 
 void ModCountry(Country arr[]){
 
-
+//It finds the Country to modify by asking the user it's name
     string country;
     cout<<"  |How's your country called?";
     if ( cin.peek() == '\n' )
 	    cin.ignore(); 
     getline(cin,country);
 
-
+//then It iterates over every object in array, when the name is found it saves the i value to objIndex
     int objIndex;
     int menuIndex;    
 
@@ -252,6 +252,7 @@ void ModCountry(Country arr[]){
             break;
         }else if (menuIndex==3)
         {
+            //Changes the currency
             string newcap;
             cout<<"   |What's the new capital of your Country?: ";
 
@@ -270,6 +271,7 @@ void ModCountry(Country arr[]){
 
 }
 
+//Changes the currency W.I.P
 void DelCountry(Country arr[]){
     string country;
     cout<<"  |How's your country called?";
@@ -284,6 +286,8 @@ void DelCountry(Country arr[]){
 
 
 }
+
+//shit don't work, sadly
 string capitalize(string text) {
 
 	for (int x = 0; x < text.length(); x++)
@@ -307,7 +311,7 @@ string capitalize(string text) {
 
 /*
 1-country.Language can only have one language, I'd use std:vector but my teacher won't let me do it.
-2-Since you can't create an objetc with an identifier named as 
+2-Since you can't create an object with an identifier named with user input, we will use Country.getName() and it's index to identify it.
 3-Capitalization MATTERS when adding the name of the country. 
 4-
 5-
