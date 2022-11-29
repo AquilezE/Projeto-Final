@@ -124,6 +124,8 @@ void distance(Country arr[]);
 
 void sortShow(Country arr[]);
 
+void bubsort(Country arra[], int j);
+
 string capitalize(string str);
 
 

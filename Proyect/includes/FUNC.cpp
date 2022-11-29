@@ -403,7 +403,7 @@ void sortShow(Country arr[]){
 
     cout<<"   |>";
     cin>>opt;
-
+    cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
     switch (opt)
     {
     case 1:
@@ -414,21 +414,12 @@ void sortShow(Country arr[]){
         {
             if (arr[i].getCont()>arr[i+1].getCont())
             {
-                Country temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                bubsort(arr,i);
             }
         }
     }
-        cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
-        for (int i = 0; i < 50; i++)
-        {
-            if (!(arr[i].getPop()==-1))
-            {
-            cout<<"     | "<<arr[i].getName()<<"|  "<<arr[i].getCont()<<"|  "<<arr[i].getCap()<<"  |   "<<arr[i].getPop()<<"  |       "<<arr[i].gLat()<<"    |     "<<arr[i].gLon()<<"\n";
-            }
-        }
-        cout<<"     | ------------------------------------------------------------\n";
+
+        
         break;
     case 2:
     for (int k = 0; k < 50; k++)
@@ -437,21 +428,12 @@ void sortShow(Country arr[]){
         {
             if (arr[i].getName()>arr[i+1].getName())
             {
-                Country temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                bubsort(arr,i);
             }
         }
     }     
-        cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
-        for (int i = 0; i < 50; i++)
-        {
-            if (!(arr[i].getPop()==-1))
-            {
-            cout<<"     | "<<arr[i].getName()<<" | "<<arr[i].getCont()<<" | "<<arr[i].getCap()<<"  |   "<<arr[i].getPop()<<"    |     "<<arr[i].gLat()<<"     |    "<<arr[i].gLon()<<"\n";
-            }
-        }
-        cout<<"     | ------------------------------------------------------------\n";
+
+        
         break;
     case 3:
     for (int k = 0; k < 50; k++)
@@ -460,21 +442,11 @@ void sortShow(Country arr[]){
         {
             if (arr[i].getCap()>arr[i+1].getCap())
             {
-                Country temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                bubsort(arr,i);
             }
         }
     }
-        cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
-        for (int i = 0; i < 50; i++)
-        {
-            if (!(arr[i].getPop()==-1))
-            {
-            cout<<"     | "<<arr[i].getName()<<" | "<<arr[i].getCont()<<" | "<<arr[i].getCap()<<"   |  "<<arr[i].getPop()<<"     |    "<<arr[i].gLat()<<"    |     "<<arr[i].gLon()<<"\n";
-            }
-        }
-        cout<<"     | ------------------------------------------------------------\n";
+        
         break;
     case 4:
     for (int k = 0; k < 50; k++)
@@ -483,21 +455,11 @@ void sortShow(Country arr[]){
         {
             if (arr[i].getPop()<arr[i+1].getPop())
             {
-                Country temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                bubsort(arr,i);
             }
         }
     } 
-        cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
-        for (int i = 0; i < 50; i++)
-        {
-            if (!(arr[i].getPop()==-1))
-            {
-            cout<<"     | "<<arr[i].getName()<<" | "<<arr[i].getCont()<<" | "<<arr[i].getCap()<<"  |   "<<arr[i].getPop()<<"    |     "<<arr[i].gLat()<<"     |    "<<arr[i].gLon()<<"\n";
-            }
-        }
-        cout<<"     | ------------------------------------------------------------\n";    
+
         break;
     case 5:
     for (int k = 0; k < 50; k++)
@@ -506,21 +468,11 @@ void sortShow(Country arr[]){
         {
             if (arr[i].gLat()>arr[i+1].gLat())
             {
-                Country temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                bubsort(arr,i);
             }
         }
     }     
-        cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
-        for (int i = 0; i < 50; i++)
-        {
-            if (!(arr[i].getPop()==-1))
-            {
-            cout<<"     | "<<arr[i].getName()<<" | "<<arr[i].getCont()<<" | "<<arr[i].getCap()<<"   |  "<<arr[i].getPop()<<"    |     "<<arr[i].gLat()<<"    |     "<<arr[i].gLon()<<"\n";
-            }
-        }
-        cout<<"     | ------------------------------------------------------------\n";    
+  
         break;
     case 6:
     for (int k = 0; k < 50; k++)
@@ -529,32 +481,30 @@ void sortShow(Country arr[]){
         {
             if (arr[i].gLat()>arr[i+1].gLat())
             {
-                Country temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                bubsort(arr,i);
             }
         }
     }
-        cout<<"     | Name--Continent--Capital--Population--Latitude-Altitude\n";
-        for (int i = 0; i < 50; i++)
-        {
-            if (!(arr[i].getPop()==-1))
-            {
-            cout<<"     | "<<arr[i].getName()<<" | "<<arr[i].getCont()<<" | "<<arr[i].getCap()<<"   |  "<<arr[i].getPop()<<"     |    "<<arr[i].gLat()<<"    |     "<<arr[i].gLon()<<"\n";
-            }
-        }
-        cout<<"     | ------------------------------------------------------------\n";
         break;        
     default:
         cout<<"     |Invalid instruction\n";
         break;
     }
+    
+    for (int i = 0; i < 50; i++)
+    {
+        if (!(arr[i].getPop()==-1))
+        {
+            cout<<"     | "<<arr[i].getName()<<" | "<<arr[i].getCont()<<" | "<<arr[i].getCap()<<"   |  "<<arr[i].getPop()<<"     |    "<<arr[i].gLat()<<"    |     "<<arr[i].gLon()<<"\n";
+        }
+    }
+    cout<<"     | ------------------------------------------------------------\n";
 
 
 }
 
-
-
-
-
-
+void bubsort(Country arra[], int j){
+            Country temp=arra[j];
+            arra[j]=arra[j+1];
+            arra[j+1]=temp;
+}
