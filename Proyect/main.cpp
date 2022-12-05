@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-//used in distance() to calculate a square root, since a recursive exponenciation function doesn't work with .5 
-#include <cmath>
 #include "includes/FUNC.h"
 
 using namespace std;
@@ -17,7 +15,7 @@ int main()
         "3. Country Elimination\n"
         "4. Country Specific Inquiry\n"
         "5. Consultation of the countries of some continent\n"
-        "6. Distance between two countries\n"
+        "6. Show relative location of countries\n"
         "7. Show existing countries sorted\n"
         "0. Exit\n";
     int option;
@@ -73,7 +71,7 @@ int main()
             findCont(countries);
             break;
         case 6:
-            distance(countries);
+            RelativePos(countries);
             break;
 
         case 7:
@@ -106,5 +104,5 @@ int main()
 1-country.Langu age can only have one language, I'd use std:vector but my teacher won't let me do it.
 2-Since you can't create an object with an identifier named with user input, we will use Country.getName() and it's index to identify it.
 5- Distance is assuming flat map.
-6-If you insert a string in an place where an Int is asked, you'll fucking break it
+6-If you insert a string in an place where an Int is asked, you'll break it
 */

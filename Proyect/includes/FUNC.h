@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <cmath>
 
 using namespace std;
 
@@ -83,7 +82,7 @@ void InfoCountry(Country arr[]);
 
 void findCont(Country arr[]);
 
-void distance(Country arr[]);
+void RelativePos(Country arr[]);
 
 void sortShow(Country arr[]);
 

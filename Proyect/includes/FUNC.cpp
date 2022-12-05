@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <cmath>
+
 #include "FUNC.h"
 
 
@@ -8,6 +8,8 @@ using namespace std;
 
 //asks for a lot of stuff
 extern int counter;
+
+
 
 string capitalize(string str){
 	for (int i=0;str[i]!='\n';++i) {
@@ -29,6 +31,13 @@ string capitalize(string str){
 }
 
 extern Country countries[50];
+
+
+void bubsort(Country arra[], int j){
+            Country temp=arra[j];
+            arra[j]=arra[j+1];
+            arra[j+1]=temp;
+}
 
 void AddCountry(Country arr[]){
     if ( cin.peek() == '\n' ){
@@ -213,7 +222,18 @@ void DelCountry(Country arr[]){
             return;
         }
     }
-
+    
+    for (int k = 0; k < 50; k++)
+    {
+        for (int i = 0; i < 50-k-1; i++)
+        {
+            if (arr[i].getName()>arr[i+1].getName())
+            {
+                bubsort(arr,i);
+            }
+        }
+    }
+    
     cout<<"  |The Country doesn't exist\n\n";
     
 
@@ -314,7 +334,7 @@ void findCont(Country arr[]){
 
 }
 
-void distance(Country arr[]){
+void RelativePos(Country arr[]){
     string country,country2;
 
     cout<<"  |What's the name of the first country?: ";
@@ -370,10 +390,8 @@ void distance(Country arr[]){
     
     
 
-
-    float dist = sqrt(pow(arr[objIndex].gLat() - arr[objIndex2].gLat(), 2) + pow(arr[objIndex].gLon() - arr[objIndex2].gLon(), 2) * 1.0);
     
-    cout<<"   |The distance between them is: "<<dist<<"\n";
+    
     cout<<"   |"<<arr[objIndex].getName()<<" Is ";
     if (arr[objIndex].gLat()>arr[objIndex2].gLat())
     {
@@ -502,12 +520,6 @@ void sortShow(Country arr[]){
     cout<<"     | ------------------------------------------------------------\n";
 
 
-}
-
-void bubsort(Country arra[], int j){
-            Country temp=arra[j];
-            arra[j]=arra[j+1];
-            arra[j+1]=temp;
 }
 
     //Setters
