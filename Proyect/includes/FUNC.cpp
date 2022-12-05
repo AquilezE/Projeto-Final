@@ -293,12 +293,13 @@ void findCont(Country arr[]){
     getline(cin,continent);
 
     int c=0;
-    cout<<"   |The countries in that continent are: ";
+    cout<<"   |The countries in that continent are:\n";
     for (int i=0; i<50;i++)
     {
         if (arr[i].getCont()==capitalize(continent))
         {
-            cout<<arr[i].getName()<<" ";           
+            cout<<"   |>"<<arr[i].getName()<<"\n";
+            c+=1;           
         }
     }
 
@@ -373,7 +374,7 @@ void distance(Country arr[]){
     float dist = sqrt(pow(arr[objIndex].gLat() - arr[objIndex2].gLat(), 2) + pow(arr[objIndex].gLon() - arr[objIndex2].gLon(), 2) * 1.0);
     
     cout<<"   |The distance between them is: "<<dist<<"\n";
-    cout<<"   |"<<arr[objIndex2].getName()<<" Is ";
+    cout<<"   |"<<arr[objIndex].getName()<<" Is ";
     if (arr[objIndex].gLat()>arr[objIndex2].gLat())
     {
        cout<<"South";
@@ -387,7 +388,7 @@ void distance(Country arr[]){
     }else if (arr[objIndex].gLon()<arr[objIndex2].gLon()){
         cout<<" East ";
     }
-    cout<<"of "<<arr[objIndex].getName()<<"\n";
+    cout<<"of "<<arr[objIndex2].getName()<<"\n";
 }
 
 void sortShow(Country arr[]){

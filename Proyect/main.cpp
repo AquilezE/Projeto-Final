@@ -1,131 +1,12 @@
 #include <iostream>
 #include <string>
+//used in distance() to calculate a square root, since a recursive exponenciation function doesn't work with .5 
 #include <cmath>
 #include "includes/FUNC.h"
 
 using namespace std;
 
-/*
-string capitalize(string str);
-
-class Country{
-    //Atributes
-    private:
-        string Name;
-        long int Population;
-        string Language;
-        string Currency;
-        string Capital;    
-        float Lon,Lat;
-
-    public:
-        
-        string Continent;    
-
-    
-    //Constructor
-
-    Country (string name="zzzz", int population=-1, string currency="empty", string capital="empty", string continent="empty",float A=0.00,float L=0.00){
-        Name=name;
-        Population=population;
-        Currency=currency;
-        Capital=capital;
-        Continent=continent;
-        Lon=A;
-        Lat=L;
-    };
-
-    //Destructor;
-
-    ~Country(){}
-
-    //Setters
-        
-    void changePop(int temp){
-        Population=temp;
-    };
-
-    void changeCurr(string temp){
-        Currency=capitalize(temp);
-    }
-
-    void changeCap(string temp){
-        Capital=capitalize(temp);
-    }
-    
-    void changeCoor(float lon,float lat){
-        Lon=lon;
-        Lat=lat;
-    }
-
-    void changeCont(string temp){
-        Continent=capitalize(temp);
-    }
-
-    void changeName(string temp){
-        Name=capitalize(temp);
-    }
-
-    void reset(){
-        Name="zzzz";
-        Population=-1;
-        Currency="empty";
-        Capital="empty";
-        Continent="empty";
-        Lon=0;
-        Lat=0;
-    }
-    
-    //Getters
-    int getPop(){
-        return Population;
-    }
-
-    string getCap(){
-        return Capital;
-    }
-
-    string getCurr(){
-        return Currency;
-    }
-
-    string getName(){
-        return Name;
-    }
-
-    string getCont(){
-        return Continent;
-    }
-
-    float gLat(){
-        return Lat;
-    }
-
-    float gLon(){
-        return Lon;
-    }
-
-
-};
-
-
-
-void AddCountry(Country arr[]);
-
-void ModCountry(Country arr[]);
-
-void DelCountry(Country arr[]);
-
-void InfoCountry(Country arr[]);
-
-void findCont(Country arr[]);
-
-void distance(Country arr[]);
-
-void sortShow(Country arr[]);
-*/
-
-int counter={3};
+int counter={4};
 
 int main()
 {
@@ -147,12 +28,14 @@ int main()
     
     //Example Countries
 
-    Country Mexico("Mexico",2000,"Pesos","CDMX","Zamerica",20.00,-102.00);
-    Country Japan("Japan",3000,"Yen","Tokyo","America",35.00,137.00);
-    Country Argentina("Argentina",1000,"Arg","B.A.","Sudamerica",-50.00,-80.00);
+    Country Mexico("Mexico",2000,"Pesos","CDMX","Nor Ame",20.00,-102.00);
+    Country Japan("Japan",3000,"Yen","Tokyo","Asia",35.00,137.00);
+    Country Argentina("Argentina",1000,"Peso Arg","B.A.","Sud Ame",-50.00,-80.00);
+    Country Peru("Peru",2500,"Sol","Lima","Sud Ame",-40.00,-90.00);
     countries[0]=Mexico;
     countries[1]=Japan;
     countries[2]=Argentina;
+    countries[3]=Peru;
 
     //Calls  
     do
@@ -220,8 +103,8 @@ int main()
 /*----------Limitations---------------*/
 
 /*
-1-country.Language can only have one language, I'd use std:vector but my teacher won't let me do it.
+1-country.Langu age can only have one language, I'd use std:vector but my teacher won't let me do it.
 2-Since you can't create an object with an identifier named with user input, we will use Country.getName() and it's index to identify it.
-5-Distance is assuming the location of the points in a flat map
+5- Distance is assuming flat map.
 6-If you insert a string in an place where an Int is asked, you'll fucking break it
 */
