@@ -509,3 +509,71 @@ void bubsort(Country arra[], int j){
             arra[j]=arra[j+1];
             arra[j+1]=temp;
 }
+
+    //Setters
+
+    void Country::changePop(int temp){
+        Population=temp;
+    };
+
+    void Country::changeCurr(string temp){
+        Currency=(temp);
+    }
+
+    void Country::changeCap(string temp){
+        Capital=(temp);
+    }
+    
+    void Country::changeCoor(float lon,float lat){
+        Lon=lon;
+        Lat=lat;
+    }
+
+    void Country::changeCont(string temp){
+        Continent=(temp);
+    }
+
+    void Country::changeName(string temp){
+        Name=(temp);
+    }
+
+    void Country::reset(){
+        Name="zzzz";
+        Population=-1;
+        Currency="empty";
+        Capital="empty";
+        Continent="empty";
+        Lon=0;
+        Lat=0;
+    }
+    
+
+    //Getters
+    int Country::getPop(){
+        return Population;
+    }
+
+    string Country::getCap(){
+        return Capital;
+    }
+
+    string Country::getCurr(){
+        return Currency;
+    }
+
+    string Country::getName(){
+        return Name;
+    }
+
+    string Country::getCont(){
+        return Continent;
+    }
+
+    float Country::gLat(){
+        return Lat;
+    }
+
+    float Country::gLon(){
+        return Lon;
+    }
+

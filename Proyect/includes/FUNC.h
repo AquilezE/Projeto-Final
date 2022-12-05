@@ -25,7 +25,6 @@ class Country{
 
     
     //Constructor
-
     Country (string name="zzzz", int population=-1, string currency="empty", string capital="empty", string continent="empty",float A=0.00,float L=0.00){
         Name=name;
         Population=population;
@@ -34,77 +33,41 @@ class Country{
         Continent=continent;
         Lon=A;
         Lat=L;
-    };
-
+    }
     //Destructor;
 
     ~Country(){}
 
     //Setters
         
-    void changePop(int temp){
-        Population=temp;
-    };
+    void changePop(int temp);
 
-    void changeCurr(string temp){
-        Currency=(temp);
-    }
+    void changeCurr(string temp);
 
-    void changeCap(string temp){
-        Capital=(temp);
-    }
+    void changeCap(string temp);
     
-    void changeCoor(float lon,float lat){
-        Lon=lon;
-        Lat=lat;
-    }
+    void changeCoor(float lon,float lat);
 
-    void changeCont(string temp){
-        Continent=(temp);
-    }
+    void changeCont(string temp);
 
-    void changeName(string temp){
-        Name=(temp);
-    }
+    void changeName(string temp);
 
-    void reset(){
-        Name="zzzz";
-        Population=-1;
-        Currency="empty";
-        Capital="empty";
-        Continent="empty";
-        Lon=0;
-        Lat=0;
-    }
+    void reset();
     
     //Getters
-    int getPop(){
-        return Population;
-    }
+    int getPop();
 
-    string getCap(){
-        return Capital;
-    }
+    string getCap();
 
-    string getCurr(){
-        return Currency;
-    }
+    string getCurr();
 
-    string getName(){
-        return Name;
-    }
+    string getName();
 
-    string getCont(){
-        return Continent;
-    }
+    string getCont();
 
-    float gLat(){
-        return Lat;
-    }
+    float gLat();
 
-    float gLon(){
-        return Lon;
-    }
+    float gLon();
 
 
 };
